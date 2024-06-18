@@ -73,13 +73,17 @@ function onSubmit(data) {
   emits("onSubmit", data);
   history.value.push(data.item);
 }
+
+
+const tinder = ref(null);
+
 function decide(choice) {
   if (choice === "rewind") {
     if (history.value.length) {
-      $refs.tinder.rewind(history.value.splice(history.value.length - 1));
+      tinder.value.rewind(history.value.splice(history.value.length - 1));
     }
   } else {
-    $refs.tinder.decide(choice);
+    tinder.value.decide(choice);
   }
 }
 </script>
