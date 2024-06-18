@@ -13,7 +13,7 @@
         <div
           class="pic"
           :style="{
-            'background-image': `url(https://cn.bing.com//th?id=OHR.${data.img}_UHD.jpg&pid=hp&w=720&h=1280&rs=1&c=4&r=0)`
+            'background-image': `url(https://cn.bing.com//th?id=OHR.${data.img}_UHD.jpg&pid=hp&w=720&h=1280&rs=1&c=4&r=0)`,
           }"
         />
       </template>
@@ -44,51 +44,47 @@
 </template>
 
 <script setup>
-import Tinder from 'vue-tinder'
-import source from './bing'
-import 'vue-tinder/lib/style.css'
-import { ref, onMounted } from 'vue'
-
+import Tinder from "vue-tinder";
+import source from "./bing";
+import "vue-tinder/lib/style.css";
+import { ref, onMounted } from "vue";
 
 onMounted(() => {
-    mock()
-})
+  mock();
+});
 
-  const emits = defineEmits(['onSubmit'])
-    const queue= ref([]);
-    const offset= ref(0);
+const emits = defineEmits(["onSubmit"]);
+const queue = ref([]);
+const offset = ref(0);
 const history = ref([]);
-    function mock(count = 5, append = true) {
-      const list = []
-      for (let i = 0; i < count; i++) {
-        list.push({ id: i,  img: source[offset.value] })
-        offset.value++
-      }
-      if (append) {
-        queue.value = queue.value.concat(list)
-      } else {
-        queue.value.unshift(...list)
-      }
+function mock(count = 5, append = true) {
+  const list = [];
+  for (let i = 0; i < count; i++) {
+    list.push({ id: i, img: source[offset.value] });
+    offset.value++;
+  }
+  if (append) {
+    queue.value = queue.value.concat(list);
+  } else {
+    queue.value.unshift(...list);
+  }
+}
+function onSubmit(data) {
+  emits("onSubmit", data);
+  history.value.push(data.item);
+}
+function decide(choice) {
+  if (choice === "rewind") {
+    if (history.value.length) {
+      $refs.tinder.rewind(history.value.splice(history.value.length - 1));
     }
-    function onSubmit(data) {
-      emits("onSubmit", data)
-      history.value.push(data.item)
-    }
-    function decide(choice) {
-      if (choice === 'rewind') {
-        if (history.value.length) {
-          $refs.tinder.rewind(
-            history.value.splice(history.value.length-1)
-          )
-        }
-      } else {
-        $refs.tinder.decide(choice)
-      }
-    }
+  } else {
+    $refs.tinder.decide(choice);
+  }
+}
 </script>
 
 <style scoped>
-
 #app {
   width: 100%;
   height: 100%;
@@ -155,5 +151,4 @@ const history = ref([]);
 .btn {
   font-size: 36px;
 }
-
 </style>

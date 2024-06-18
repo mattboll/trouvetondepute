@@ -6,6 +6,9 @@ export const useQuizStore = defineStore('quiz', {
         answers: []
     }),
     actions: {
+        reset() {
+            this.answers = []
+        },
         setAnswer(questionId, answer) {
             const a = this.answers.find(q => q.id === questionId)
             if (a) {
