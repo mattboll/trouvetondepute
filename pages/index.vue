@@ -38,3 +38,12 @@ const hasResults = computed(() => {
 });
 
 </script>
+
+<style scoped>
+.btn:hover {
+  background-color: red;
+}
+.btn {
+  background-color: blueviolet;
+}
+</style>
