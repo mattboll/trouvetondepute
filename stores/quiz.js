@@ -17,8 +17,6 @@ export const useQuizStore = defineStore('quiz', {
         getResults() {
             const results = [{ party: 'NFP', score: 0 }, { party: 'REN', score: 0 }, { party: 'RN', score: 0 }]
             this.answers.forEach(a => {
-                console.dir(a)
-                console.dir(questions)
                 const currentQuestion = questions.find(q => q.id === a.id)
                 currentQuestion.score.forEach(s => {
                     const r = results.find(r => r.party === s.party)

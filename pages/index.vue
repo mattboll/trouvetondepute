@@ -2,8 +2,13 @@
   <div class="mt-4">
     <question @onSubmit="setAnswer"></question>
 
-    <div v-if="hasResults">
-        <NuxtLink to="/results">Voir les résultats</NuxtLink>
+<div class="flex flex-col justify-center items-center mt-3">
+    <div class="mt-4" v-show="hasResults">
+        <NuxtLink class="bg-gray-300 hover:bg-gray-400 text-black font-bold py-2 px-4 rounded-full" to="/results">Tes résultats</NuxtLink>
+    </div>
+    <div class="mt-4">
+        <NuxtLink class="bg-gray-300 hover:bg-gray-400 text-black font-bold py-2 px-4 rounded-full" to="/legals">On est qui ?</NuxtLink>
+    </div>
     </div>
   </div>
 </template>
