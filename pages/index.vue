@@ -4,10 +4,10 @@
 
 <div class="flex flex-col justify-center items-center mt-3">
     <div class="mt-4" v-show="hasResults">
-        <NuxtLink class="bg-gray-300 hover:bg-gray-400 text-black font-bold py-2 px-4 rounded-full" to="/results">Tes résultats</NuxtLink>
+        <cta to="/results">Tes résultats</cta>
     </div>
     <div class="mt-4">
-        <NuxtLink class="bg-gray-300 hover:bg-gray-400 text-black font-bold py-2 px-4 rounded-full" to="/legals">On est qui ?</NuxtLink>
+        <cta to="/legals">On est qui ?</cta>
     </div>
     </div>
   </div>
