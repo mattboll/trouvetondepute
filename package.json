@@ -11,6 +11,7 @@
     "deploy": "push-dir --dir=dist --branch=gh-pages --cleanup"
   },
   "dependencies": {
+    "lodash.debounce": "^4.0.8",
     "nuxt": "^3.12.2",
     "pinia": "^2.1.7",
     "vue": "^3.4.29",

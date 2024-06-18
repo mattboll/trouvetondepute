@@ -3,7 +3,8 @@ import { questions } from "../data/questions.js";
 
 export const useQuizStore = defineStore('quiz', {
     state: () => ({
-        answers: []
+        answers: [],
+        address: {}
     }),
     actions: {
         reset() {
@@ -16,6 +17,9 @@ export const useQuizStore = defineStore('quiz', {
             } else {
                 this.answers.push({ id: questionId, answer: answer })
             }
+        },
+        setAddress(address) {
+            this.address = address
         },
         getResults() {
             const results = [{ party: 'NFP', score: 0 }, { party: 'REN', score: 0 }, { party: 'RN', score: 0 }]
