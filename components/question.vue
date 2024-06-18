@@ -36,10 +36,9 @@
   </div>
   <div class="flex justify-center items-center mt-3">
     <div class="d-flex content-center items-center">
-      <span class="mx-2" @click="decide('nope')">❌</span>
-      <span class="mx-2" @click="decide('down')">🤷</span>
-      <span class="mx-2" @click="decide('like')">👍</span>
-      <span class="mx-2" @click="decide('rewind')">◀</span>
+      <span class="mx-2 btn" @click="decide('nope')">❌</span>
+      <span class="mx-2 btn" @click="decide('down')">🤷</span>
+      <span class="mx-2 btn" @click="decide('like')">👍</span>
     </div>
   </div>
 </template>
@@ -151,6 +150,10 @@ const history = ref([]);
   height: 100%;
   background-size: cover;
   background-position: center;
+}
+
+.btn {
+  font-size: 36px;
 }
 
 </style>

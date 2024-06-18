@@ -33,33 +33,8 @@ function setAnswer(data) {
   currentIndex.value = currentIndex.value + 1;
 }
 
-function onSubmit() {
-
-}
-
-function decide(choice) {
-      if (choice === 'rewind') {
-        if (history.length) {
-          this.$refs.tinder.rewind(
-            history.splice(-Math.ceil(Math.random() * 3))
-          )
-        }
-      } else {
-        this.$refs.tinder.decide(choice)
-      }
-}
-
 const hasResults = computed(() => {
   return quizStore.answers.length > 2;
 });
 
-const results = computed(() => {
-  return quizStore.getResults();
-});
-
 </script>
-
-<style>
-
-
-</style>
