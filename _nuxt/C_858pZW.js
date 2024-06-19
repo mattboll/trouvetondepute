@@ -1,0 +1,1 @@
+import{_ as c,c as e,o,a as r}from"./Cn9oyGH4.js";const t={},s=r("label",{for:"circo"},"Nom de la circonscription",-1),a=[s];function n(_,i){return o(),e("div",null,a)}const d=c(t,[["render",n]]);export{d as default};
