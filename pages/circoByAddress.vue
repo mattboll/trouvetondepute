@@ -22,7 +22,7 @@
       </li>
     </ul>
 
-    <div class="flex flex-col justify-center items-center mt-3">
+    <div class="flex flex-col justify-center items-center mt-3" v-show  = false>
       <cta class="mt-4" to="/circoByName">Je connais le nom de ma circonscription</cta>
     </div>
   </div>

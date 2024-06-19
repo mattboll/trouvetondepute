@@ -1,6 +1,6 @@
 <template>
   <div>
-    {{ address.properties.label }}
+    {{ address.properties?.label }}
     <br>
     {{ currentCirco.properties?.nomDepartement }} <br>
     {{ currentCirco.properties?.nomCirconscription }} <br>
